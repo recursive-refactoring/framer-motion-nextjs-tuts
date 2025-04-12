@@ -14,6 +14,7 @@ import { Avatar, Box } from "@mui/material";
 import StackImages from "./stack-images";
 import ActivityInfoCard from "../activity-info-card";
 import HeroRight from "./stack-images";
+import { SlideUp } from "@/components/animations/slide-up";
 
 export const HeroCard = (props: any) => {
   const {
@@ -29,14 +30,16 @@ export const HeroCard = (props: any) => {
     <Box sx={{ padding: "2rem", paddingY: "6rem" }}>
       <ContainerGridLayout>
         <ItemGridLayout md={5} lg={6}>
-          <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-            <IconAvatar>
-              <Place />
-            </IconAvatar>
-            <BodyText>{title}</BodyText>
-          </Box>
-          <HeadingText>{heading}</HeadingText>
-          <BodyText>{description}</BodyText>
+          <SlideUp>
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              <IconAvatar>
+                <Place />
+              </IconAvatar>
+              <BodyText>{title}</BodyText>
+            </Box>
+            <HeadingText>{heading}</HeadingText>
+            <BodyText>{description}</BodyText>
+          </SlideUp>
         </ItemGridLayout>
         <ItemGridLayout
           md={7}

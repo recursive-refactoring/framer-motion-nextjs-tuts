@@ -4,6 +4,8 @@ import {
   CommonCardTopOneImage,
   CommonCardTopTwoImage,
 } from "@/assets/images/common/card";
+import { SlideDown } from "@/components/animations/slide-down";
+import { SlideUp } from "@/components/animations/slide-up";
 
 export default function HeroRight() {
   return (
@@ -15,16 +17,18 @@ export default function HeroRight() {
         minHeight: "100%",
       }}
     >
-      <Avatar
-        src={CommonCardBgManImage?.src}
-        sx={{
-          width: "80%",
-          height: "100%",
-          backgroundColor: "transparent",
-        }}
-        alt="100"
-        variant="rounded"
-      />
+      <SlideUp>
+        <Avatar
+          src={CommonCardBgManImage?.src}
+          sx={{
+            width: "80%",
+            height: "100%",
+            backgroundColor: "transparent",
+          }}
+          alt="100"
+          variant="rounded"
+        />
+      </SlideUp>
 
       <Box
         sx={{
@@ -34,19 +38,22 @@ export default function HeroRight() {
           right: 0,
         }}
       >
-        <Avatar
-          src={CommonCardTopTwoImage?.src}
-          sx={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "transparent",
-            objectPosition: "center",
-            imageRendering: "auto",
-          }}
-          alt="100"
-          variant="rounded"
-        />
+        <SlideDown initialOpacity={0.3} initialY={-60} duration={0.9}>
+          <Avatar
+            src={CommonCardTopTwoImage?.src}
+            sx={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "transparent",
+              objectPosition: "center",
+              imageRendering: "auto",
+            }}
+            alt="100"
+            variant="rounded"
+          />
+        </SlideDown>
       </Box>
+
       <Box
         sx={{
           position: "absolute",
@@ -55,18 +62,20 @@ export default function HeroRight() {
           left: -70,
         }}
       >
-        <Avatar
-          src={CommonCardTopOneImage?.src}
-          sx={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "transparent",
-            objectPosition: "center",
-            imageRendering: "auto",
-          }}
-          alt="100"
-          variant="rounded"
-        />
+        <SlideDown initialOpacity={0.3} initialY={-60} duration={0.9}>
+          <Avatar
+            src={CommonCardTopOneImage?.src}
+            sx={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "transparent",
+              objectPosition: "center",
+              imageRendering: "auto",
+            }}
+            alt="100"
+            variant="rounded"
+          />
+        </SlideDown>
       </Box>
     </Box>
   );
