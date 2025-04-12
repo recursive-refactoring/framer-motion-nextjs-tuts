@@ -19,13 +19,15 @@ export const StaticAvatar = (props: StaticAvatarPropsI) => {
   } = props;
 
   const borderRadius = AVATAR_VARIANTS_BORDER_RADIUS?.[variant];
+  const remWidth = typeof width === "string" ? width : pxToRem(width);
+  const remHeight = typeof height === "string" ? height : pxToRem(height);
 
   return (
     <div
       style={{
         position: "relative",
-        width: pxToRem(width),
-        height: pxToRem(height),
+        width: remWidth,
+        height: remHeight,
         aspectRatio,
         backgroundColor,
         borderRadius,
@@ -45,6 +47,7 @@ export const StaticAvatar = (props: StaticAvatarPropsI) => {
           objectFit: "cover",
           borderRadius,
           aspectRatio,
+          display: "block",
         }}
       />
     </div>
