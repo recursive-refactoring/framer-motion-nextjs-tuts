@@ -3,13 +3,13 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { UiThemeProvider } from "@/providers/ui-theme-provider";
 import { SnackBarProvider } from "@/providers/snackbar.provider";
+import { generalSansFonts } from "@/assets/fonts";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["100", "400", "500", "600", "700", "800", "900"],
-  display: 'swap',
+  display: "swap",
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className}`}>
+      <body className={`${generalSansFonts.className}`}>
         <UiThemeProvider>
           <SnackBarProvider>{children}</SnackBarProvider>
         </UiThemeProvider>

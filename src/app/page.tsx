@@ -1,18 +1,12 @@
-"use client";
-import { ScrollTriggered } from "@/components/animations/scroll-triggered";
+import AnimatedGridItem from "@/components/animations/animation-scroll";
 import { BulletsListCard } from "@/components/cards/bullets-list-card";
 import { HeroCard } from "@/components/cards/hero-card";
 import { ListCard } from "@/components/cards/list-card";
-import { Fragment, useRef } from "react";
+import { Fragment } from "react";
 
 export default function Home() {
-  const ref = useRef(null);
   return (
     <>
-      {/* <ActivityInfoCard
-        name="Let us try"
-        info="Motion frmaer is aathe aminaiton aod"
-      /> */}
       <HeroCard />
       {[
         {
@@ -65,9 +59,9 @@ export default function Home() {
         },
       ]?.map((list: any, index: number) => (
         <Fragment key={list?._id}>
-          <ScrollTriggered ref={ref}>
+          <AnimatedGridItem>
             <ListCard isEven={index % 2 === 0} />
-          </ScrollTriggered>
+          </AnimatedGridItem>
         </Fragment>
       ))}
       {[
@@ -163,7 +157,9 @@ export default function Home() {
         },
       ]?.map((list: any, index: number) => (
         <Fragment key={list?._id}>
-          <BulletsListCard isEven={index % 2 === 0} />
+          <AnimatedGridItem>
+            <BulletsListCard isEven={index % 2 === 0} />
+          </AnimatedGridItem>
         </Fragment>
       ))}
     </>
