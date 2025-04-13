@@ -8,6 +8,8 @@ import { Avatar } from "@mui/material";
 
 export const BulletsListCard = (props: any) => {
   const {
+    isEven = true,
+    flexDirection = isEven ? "row" : "row-reverse",
     itemsList = [
       {
         heading: "Customizable & Social Sol",
@@ -36,8 +38,12 @@ export const BulletsListCard = (props: any) => {
       },
     ],
   } = props;
+
   return (
-    <ContainerGridLayout spacing={4} customStyles={{ padding: "1rem" }}>
+    <ContainerGridLayout
+      spacing={4}
+      customStyles={{ padding: "1rem", flexDirection }}
+    >
       <ItemGridLayout md={6}>
         <Avatar
           src={CommonCardBgManImage?.src}

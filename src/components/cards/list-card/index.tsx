@@ -8,6 +8,8 @@ import { Avatar, Box } from "@mui/material";
 
 export const ListCard = (props: any) => {
   const {
+    isEven = true,
+    flexDirection = isEven ? "row" : "row-reverse",
     heading = "Seamless Integrationa MaVailabel",
     description = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic sapiente illo consequuntur dolore dolores eligendi provident dolorem cupiditate laboriosam voluptatum!`,
     itemsLists = [
@@ -24,7 +26,7 @@ export const ListCard = (props: any) => {
   } = props;
 
   return (
-    <ContainerGridLayout customStyles={{ padding: "1rem" }}>
+    <ContainerGridLayout customStyles={{ padding: "1rem", flexDirection }}>
       <ItemGridLayout md={6}>
         <Avatar
           src={CommonCardBgManImage?.src}

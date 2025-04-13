@@ -60,9 +60,9 @@ export default function Home() {
             },
           ],
         },
-      ]?.map((list: any) => (
+      ]?.map((list: any, index: number) => (
         <Fragment key={list?._id}>
-          <ListCard />
+          <ListCard isEven={index % 2 === 0} />
         </Fragment>
       ))}
       {[
@@ -156,9 +156,9 @@ export default function Home() {
             },
           ],
         },
-      ]?.map((list: any) => (
+      ]?.map((list: any, index: number) => (
         <Fragment key={list?._id}>
-          <BulletsListCard />
+          <BulletsListCard isEven={index % 2 === 0} />
         </Fragment>
       ))}
     </>
