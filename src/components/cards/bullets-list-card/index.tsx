@@ -57,8 +57,8 @@ export const BulletsListCard = (props: any) => {
           <StarBorder sx={{ color: "text.primary" }} />
         </Avatar>
         <ul>
-          {itemsList.map((list: any) => (
-            <li style={{}}>
+          {itemsList.map((list: any, index: number) => (
+            <li key={list?.heading + index} style={{}}>
               <SubHeadingText component="span">
                 {list?.heading ? `${list?.heading} :` : ""}
               </SubHeadingText>{" "}

@@ -1,9 +1,12 @@
+"use client";
+import { ScrollTriggered } from "@/components/animations/scroll-triggered";
 import { BulletsListCard } from "@/components/cards/bullets-list-card";
 import { HeroCard } from "@/components/cards/hero-card";
 import { ListCard } from "@/components/cards/list-card";
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 
 export default function Home() {
+  const ref = useRef(null);
   return (
     <>
       {/* <ActivityInfoCard
@@ -62,7 +65,9 @@ export default function Home() {
         },
       ]?.map((list: any, index: number) => (
         <Fragment key={list?._id}>
-          <ListCard isEven={index % 2 === 0} />
+          <ScrollTriggered ref={ref}>
+            <ListCard isEven={index % 2 === 0} />
+          </ScrollTriggered>
         </Fragment>
       ))}
       {[
