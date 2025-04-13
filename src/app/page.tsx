@@ -2,12 +2,14 @@ import AnimatedGridItem from "@/components/animations/animation-scroll";
 import { BulletsListCard } from "@/components/cards/bullets-list-card";
 import { HeroCard } from "@/components/cards/hero-card";
 import { ListCard } from "@/components/cards/list-card";
+import { TextCard } from "@/components/cards/text-grid";
 import { Box } from "@mui/material";
 import { Fragment } from "react";
 
 export default function Home() {
   return (
     <>
+      <TextCard />
       <HeroCard />
       {[
         {
