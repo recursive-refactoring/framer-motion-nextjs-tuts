@@ -1,18 +1,10 @@
-import {
-  CommonCardBgManImage,
-  CommonCardTopOneImage,
-  CommonCardTopTwoImage,
-} from "@/assets/images/common/card";
 import { IconAvatar } from "@/components/avatars/icon-avatar";
-import { StaticAvatar } from "@/components/avatars/static-avatar";
 import { ContainerGridLayout } from "@/components/layouts/container-grid-layout";
 import { ItemGridLayout } from "@/components/layouts/item-grid-layout";
 import { BodyText } from "@/components/text/body-text";
 import { HeadingText } from "@/components/text/heading-text";
 import { Place } from "@mui/icons-material";
 import { Avatar, Box } from "@mui/material";
-import StackImages from "./stack-images";
-import ActivityInfoCard from "../activity-info-card";
 import HeroRight from "./stack-images";
 import { SlideUp } from "@/components/animations/slide-up";
 
