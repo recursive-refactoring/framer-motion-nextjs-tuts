@@ -5,6 +5,7 @@ import { BodyText } from "@/components/text/body-text";
 import { SubHeadingText } from "@/components/text/sub-heading-text";
 import { StarBorder } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
+import { CommonCard } from "../common-card";
 
 export const BulletsListCard = (props: any) => {
   const {
@@ -40,33 +41,39 @@ export const BulletsListCard = (props: any) => {
   } = props;
 
   return (
-    <ContainerGridLayout
-      spacing={4}
-      customStyles={{ padding: "1rem", flexDirection }}
-    >
-      <ItemGridLayout md={6}>
-        <Avatar
-          src={CommonCardBgManImage?.src}
-          alt="122"
-          variant="square"
-          sx={{ width: "100%", height: "100%", aspectRatio: "4/3" }}
-        />
-      </ItemGridLayout>
-      <ItemGridLayout md={6}>
-        <Avatar sx={{ width: 50, height: 50 }}>
-          <StarBorder sx={{ color: "text.primary" }} />
-        </Avatar>
-        <ul>
-          {itemsList.map((list: any, index: number) => (
-            <li key={list?.heading + index} style={{}}>
-              <SubHeadingText component="span">
-                {list?.heading ? `${list?.heading} :` : ""}
-              </SubHeadingText>{" "}
-              <BodyText component="span">{list?.description}</BodyText>
-            </li>
-          ))}
-        </ul>
-      </ItemGridLayout>
-    </ContainerGridLayout>
+    <CommonCard>
+      <ContainerGridLayout spacing={4} customStyles={{ flexDirection }}>
+        <ItemGridLayout md={6}>
+          <Avatar
+            src={CommonCardBgManImage?.src}
+            alt="122"
+            variant="square"
+            sx={{ width: "100%", height: "100%", aspectRatio: "4/3" }}
+          />
+        </ItemGridLayout>
+        <ItemGridLayout md={6}>
+          <Avatar
+            sx={{
+              width: 50,
+              height: 50,
+              backgroundColor: "primary.main",
+              mb: 1,
+            }}
+          >
+            <StarBorder sx={{ color: "common.white" }} />
+          </Avatar>
+          <ul>
+            {itemsList.map((list: any, index: number) => (
+              <li key={list?.heading + index} style={{}}>
+                <SubHeadingText component="span">
+                  {list?.heading ? `${list?.heading} :` : ""}
+                </SubHeadingText>{" "}
+                <BodyText component="span">{list?.description}</BodyText>
+              </li>
+            ))}
+          </ul>
+        </ItemGridLayout>
+      </ContainerGridLayout>
+    </CommonCard>
   );
 };

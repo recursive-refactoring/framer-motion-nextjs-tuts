@@ -2,6 +2,7 @@ import AnimatedGridItem from "@/components/animations/animation-scroll";
 import { BulletsListCard } from "@/components/cards/bullets-list-card";
 import { HeroCard } from "@/components/cards/hero-card";
 import { ListCard } from "@/components/cards/list-card";
+import { Box } from "@mui/material";
 import { Fragment } from "react";
 
 export default function Home() {
@@ -58,11 +59,11 @@ export default function Home() {
           ],
         },
       ]?.map((list: any, index: number) => (
-        <Fragment key={list?._id}>
+        <Box sx={{ my: 2 }} key={list?._id}>
           <AnimatedGridItem>
             <ListCard isEven={index % 2 === 0} />
           </AnimatedGridItem>
-        </Fragment>
+        </Box>
       ))}
       {[
         {
@@ -156,11 +157,11 @@ export default function Home() {
           ],
         },
       ]?.map((list: any, index: number) => (
-        <Fragment key={list?._id}>
+        <Box sx={{ my: 2 }} key={list?._id}>
           <AnimatedGridItem>
             <BulletsListCard isEven={index % 2 === 0} />
           </AnimatedGridItem>
-        </Fragment>
+        </Box>
       ))}
     </>
   );

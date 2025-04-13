@@ -5,6 +5,7 @@ import { BodyText } from "@/components/text/body-text";
 import { HeadingText } from "@/components/text/heading-text";
 import { FiberManualRecord } from "@mui/icons-material";
 import { Avatar, Box } from "@mui/material";
+import { CommonCard } from "../common-card";
 
 export const ListCard = (props: any) => {
   const {
@@ -26,42 +27,44 @@ export const ListCard = (props: any) => {
   } = props;
 
   return (
-    <ContainerGridLayout customStyles={{ padding: "1rem", flexDirection }}>
-      <ItemGridLayout md={6}>
-        <Avatar
-          src={CommonCardBgManImage?.src}
-          alt="122"
-          variant="square"
-          sx={{ width: "100%", height: "100%", aspectRatio: "4/3" }}
-        />
-      </ItemGridLayout>
-      <ItemGridLayout md={6}>
-        <HeadingText>{heading}</HeadingText>
-        <Box sx={{ marginY: 2 }}>
-          <BodyText>{description}</BodyText>
-        </Box>
-        {itemsLists?.map((list: any) => (
-          <Box
-            key={list?.text}
-            sx={{ display: "flex", alignItems: "center", gap: 1, my: 2 }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Avatar sx={{ width: 20, height: 20 }}>
-                <FiberManualRecord
-                  sx={{ fontSize: ".6rem", color: "text.primary" }}
-                />
-              </Avatar>
-            </Box>
-            <BodyText>{list?.text}</BodyText>
+    <CommonCard>
+      <ContainerGridLayout customStyles={{ flexDirection }}>
+        <ItemGridLayout md={6}>
+          <Avatar
+            src={CommonCardBgManImage?.src}
+            alt="122"
+            variant="square"
+            sx={{ width: "100%", height: "100%", aspectRatio: "4/3" }}
+          />
+        </ItemGridLayout>
+        <ItemGridLayout md={6}>
+          <HeadingText>{heading}</HeadingText>
+          <Box sx={{ marginY: 2 }}>
+            <BodyText>{description}</BodyText>
           </Box>
-        ))}
-      </ItemGridLayout>
-    </ContainerGridLayout>
+          {itemsLists?.map((list: any) => (
+            <Box
+              key={list?.text}
+              sx={{ display: "flex", alignItems: "center", gap: 1, my: 2 }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Avatar sx={{ width: 20, height: 20 }}>
+                  <FiberManualRecord
+                    sx={{ fontSize: ".6rem", color: "text.primary" }}
+                  />
+                </Avatar>
+              </Box>
+              <BodyText>{list?.text}</BodyText>
+            </Box>
+          ))}
+        </ItemGridLayout>
+      </ContainerGridLayout>
+    </CommonCard>
   );
 };
